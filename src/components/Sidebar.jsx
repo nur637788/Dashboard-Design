@@ -1,5 +1,5 @@
-import { NavLink } from "react-router";
-import { Home, Phone, Calendar, Settings, LogOut } from "lucide-react";
+import { Link, NavLink } from "react-router";
+import { Home, Phone, Calendar, Settings, LogOut, } from "lucide-react";
 
 export default function Sidebar() {
     const linkClass = ({ isActive }) =>
@@ -10,7 +10,7 @@ export default function Sidebar() {
 
     return (
         <aside className=" min-h-screen bg-[#111B3C] border-r border-white/10 p-2 flex flex-col">
-            <div className="text-xl font-bold m-3 mb-10 text-blue-500 mx-auto cursor-pointer"><img src="/images/loco.png" alt="" /></div>
+            <Link to='/' className="text-xl font-bold m-3 mb-10 text-blue-500 mx-auto cursor-pointer"><img src="/images/loco.png" alt="" /></Link>
 
             <nav className="space-y-3 text-sm">
                 <NavLink to="/" end className={linkClass}>
@@ -31,7 +31,7 @@ export default function Sidebar() {
             </nav>
 
             <div className="mt-auto text-red-400 flex items-center gap-2 cursor-pointer">
-                <LogOut size={18} className="text-black"/> <span className="hidden md:block">Log Out</span>
+                <LogOut size={18} className="text-black" /> <span className="hidden md:block">Log Out</span>
             </div>
         </aside>
     );

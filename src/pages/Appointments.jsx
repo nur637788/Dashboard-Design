@@ -1,5 +1,4 @@
 import { Calendar, CheckCircle, Clock, Copy } from "lucide-react";
-import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 export default function Appointments() {
@@ -91,7 +90,7 @@ export default function Appointments() {
             <div className="flex justify-center items-center gap-3 text-sm text-white/60">
                 <button className="hover:text-white flex items-center justify-center"><IoIosArrowBack /> Previous</button>
                 <button className="px-2 py-1 rounded ">1</button>
-                <button className="px-2 py-1 rounded bg-[#A6C8FF] text-black/70">2</button>
+                <button className="px-2 py-1  bg-[#A6C8FF] text-black/70">2</button>
                 <button className="px-2 py-1 rounded ">3</button>
                 <button className="px-2 py-1 rounded ">4</button>
                 <span>...</span>
@@ -108,11 +107,13 @@ export default function Appointments() {
 const StatCard = ({ title, value, subtitle, icon }) => (
     <div className="bg-[#0B1639] rounded-xl p-5 shadow-glow flex justify-between items-center">
         <div>
-            <p className="text-sm text-white/60">{title}</p>
+            <div className="flex gap-3">
+                <p className='text-sm'>{icon}</p>
+                <p className="text-sm text-white/60">{title}</p>
+            </div>
             <h2 className="text-2xl font-bold mt-1">{value}</h2>
             <p className="text-xs text-green-400 mt-1">{subtitle}</p>
         </div>
-        <div className="p-3 rounded-lg bg-white/5">{icon}</div>
     </div>
 );
 

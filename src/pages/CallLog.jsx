@@ -1,4 +1,4 @@
-import { Phone, Play, Search } from "lucide-react";
+import { CheckCircle, Clock, Phone, Play, Search } from "lucide-react";
 import { MdSlowMotionVideo } from "react-icons/md";
 
 export default function CallLogs() {
@@ -26,7 +26,7 @@ export default function CallLogs() {
                             >
                                 <div className="flex justify-between">
                                     <div className="flex gap-3">
-                                        <div className="p-2 bg-blue-600/20 rounded-lg">
+                                        <div className="p-2 bg-gradient-to-br from-[#2B7FFF] to-[#00B8DB] rounded-lg">
                                             <Phone size={18} />
                                         </div>
                                         <div>
@@ -39,8 +39,8 @@ export default function CallLogs() {
                                 </div>
 
                                 <div className="flex items-center gap-3 mt-3 text-xs text-white/60">
-                                    <span>{call.duration}</span>
-                                    <span>{call.note}</span>
+                                    <span className="flex justify-center items-center gap-1"><Clock size={14} /> {call.duration}</span>
+                                    <span className="flex justify-center items-center gap-1"><CheckCircle size={14} />{call.note}</span>
                                     <Tag label={call.tag} />
                                 </div>
                             </div>
@@ -56,8 +56,7 @@ export default function CallLogs() {
                         <Select label="Today" />
                     </div>
                     <div className=" bg-[#0B1639] rounded-xl shadow-glow p-6 mt-4">
-                        <h2 className="text-sm text-white/70 mb-4">Call Details</h2>
-
+                        <h2 className="text-xl text-white/70 mb-4">Call Details</h2>
                         <div className="grid grid-cols-2 gap-6 text-sm">
                             <Detail label="Phone Number" value="+1 (555) 123-4567" />
                             <Detail label="Duration" value="4:32" />
@@ -70,7 +69,7 @@ export default function CallLogs() {
                         </div>
 
                         {/* ===== Audio ===== */}
-                        <button className="mt-6 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600/40 to-blue-600/40 hover:opacity-90 transition py-3 rounded-lg">
+                        <button className="mt-6 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#AD46FF33] to-[#F6339A33] hover:opacity-90 transition py-3 rounded-lg">
                             <MdSlowMotionVideo size={16} /> Play Audio Recording
                         </button>
 
@@ -170,7 +169,7 @@ const calls = [
         tag: "Unknown",
         status: "Dropped",
     },
-      {
+    {
         phone: "+1 (555) 345-6789",
         date: "2025-12-16 • 09:42 AM",
         duration: "5:23",
